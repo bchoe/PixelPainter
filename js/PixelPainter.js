@@ -1,29 +1,37 @@
 function pixelPainter(){
-let height = 10;
-let width = 20;
+let height = 20;
+let width = 40;
 let module = {};
 let displayDiv = document.getElementById('pixelPainter');
+let selectedColor;
 
 module.createGrid = function(){
   for(x = 0; x < width; x++){
+    //creates a column
     let createdRow = document.createElement('div');
+    //adds values to that column
     for(y = 0; y < height; y++){
       let gridBox = document.createElement('div');
-      gridBox.style.border = 'solid';
-      gridBox.style.border.width = '1px';
-      gridBox.style.height = '10px';
-      gridBox.style.width = '10px';
+      gridBox.className = 'button';
+      gridBox.id = 'column'+ x + 'row' +y;
+      gridBox.addEventListener('click', (function(selecColor){
+        gridBox.style.backgroundColor = 'red';
+      }));
       createdRow.appendChild(gridBox);
       createdRow.className = 'column';
-      console.log('hello');
     }
     displayDiv.appendChild(createdRow);
-
   }
 };
+
+module.colorSelector = function(){
+
+}
+
 return module;
 }
 
 let pPainter = new pixelPainter();
 pPainter.createGrid();
+
 
