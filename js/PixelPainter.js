@@ -3,6 +3,9 @@ let height = 20;
 let width = 40;
 let module = {};
 let displayDiv = document.getElementById('pixelPainter');
+let redValue;
+let greenValue;
+let blueValue;
 let selectedColor;
 
 module.createGrid = function(){
@@ -15,13 +18,17 @@ module.createGrid = function(){
       gridBox.className = 'button';
       gridBox.id = 'column'+ x + 'row' +y;
       gridBox.addEventListener('click', (function(selecColor){
-        gridBox.style.backgroundColor = 'red';
+        gridBox.style.backgroundColor = 'rgb(255,0,0)';
       }));
       createdRow.appendChild(gridBox);
       createdRow.className = 'column';
     }
     displayDiv.appendChild(createdRow);
   }
+};
+
+module.createColorSelectors = function (){
+
 };
 
 module.colorSelector = function(){
