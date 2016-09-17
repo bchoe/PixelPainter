@@ -1,11 +1,14 @@
 function displayBox(){
 
-let height = 20;
-let width = 40;
+let height = 60;
+let width = 80;
 let module = {};
 let displayDiv = document.getElementById('pixelPainter');
 let colorDiv = document.getElementById('colors');
-module.selectedColor = 'black';
+module.r = 0;
+module.g = 0;
+module.b = 0;
+module.selectedColor = 'rgb(' + module.r + ', ' + module.g + ', ' + module.b +')';
 
 module.createGrid = function(){
   for(x = 0; x < width; x++){
@@ -45,6 +48,9 @@ module.createColorBox = function(){
   whiteColorBox.style.backgroundColor = 'white';
 
   redColorBox.addEventListener('click', (function(){
+    document.getElementById('redSlider').Value = 255;
+    document.getElementById('greenSlider').Value = 0;
+    document.getElementById('blueSlider').Value = 0;
     module.selectedColor = 'red';
     console.log(module.selectedColor);
   }));
@@ -72,10 +78,48 @@ module.createColorBox = function(){
   colorDiv.appendChild(whiteColorBox);
 };
 
+module.colorSliders = function(){
+  let redSlider = document.createElement('input');
+  let greenSlider = document.createElement('input');
+  let blueSlider = document.createElement('input');
+
+  redSlider.id = 'redSlider';
+  greenSlider.id = 'greenSlider';
+  blueSlider.id = 'blueSlider';
+  redSlider.setAttribute('type', 'range');
+  greenSlider.setAttribute('type', 'range');
+  blueSlider.setAttribute('type', 'range');
+  redSlider.setAttribute('min', 0);
+  greenSlider.setAttribute('min', 0);
+  blueSlider.setAttribute('min', 0);
+  redSlider.setAttribute('max', 255);
+  greenSlider.setAttribute('max', 255);
+  blueSlider.setAttribute('max', 255);
+
+
+  redSlider.addEventListener('change', (function(){
+    module.r = redSlider.value;
+    module.selectedColor = 'rgb(' + module.r + ', ' + module.g + ', ' + module.b +')';
+    console.log(module.selectedColor);
+  }));
+  greenSlider.addEventListener('change', (function(){
+    module.g = greenSlider.value;
+    module.selectedColor = 'rgb(' + module.r + ', ' + module.g + ', ' + module.b +')';
+  }));
+  blueSlider.addEventListener('change', (function(){
+    module.b = blueSlider.value;
+    module.selectedColor = 'rgb(' + module.r + ', ' + module.g + ', ' + module.b +')';
+  }));
+  colorDiv.appendChild(redSlider);
+  colorDiv.appendChild(greenSlider);
+  colorDiv.appendChild(blueSlider);
+};
+
 return module;
 
 }
 
 let display = new displayBox();
 display.createColorBox();
+display.colorSliders();
 display.createGrid();

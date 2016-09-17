@@ -10,9 +10,21 @@
 
 }
 
+
 .colorBox{
   height: 50px;
   width: 50px;
   border: solid;
   display: inline-block;
 }
+
+#pixelPainter{
+  margin: auto;
+  width: 75%;
+}
+
+#colors{
+  margin: auto;
+  width: 50%;
+}
+
