@@ -9,3 +9,10 @@
   width: 10px;
 
 }
+
+.colorBox{
+  height: 50px;
+  width: 50px;
+  border: solid;
+  display: inline-block;
+}
