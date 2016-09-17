@@ -48,26 +48,43 @@ module.createColorBox = function(){
   whiteColorBox.style.backgroundColor = 'white';
 
   redColorBox.addEventListener('click', (function(){
-    document.getElementById('redSlider').Value = 255;
-    document.getElementById('greenSlider').Value = 0;
-    document.getElementById('blueSlider').Value = 0;
+    document.getElementById('redSlider').value = 255;
+    document.getElementById('greenSlider').value = 0;
+    document.getElementById('blueSlider').value = 0;
     module.selectedColor = 'red';
+    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
     console.log(module.selectedColor);
   }));
   greenColorBox.addEventListener('click', (function(){
+    document.getElementById('redSlider').value = 0;
+    document.getElementById('greenSlider').value = 255;
+    document.getElementById('blueSlider').value = 0;
     module.selectedColor = 'green';
+    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
     console.log(module.selectedColor);
   }));
   blueColorBox.addEventListener('click', (function(){
+    document.getElementById('redSlider').value = 0;
+    document.getElementById('greenSlider').value = 0;
+    document.getElementById('blueSlider').value = 255;
     module.selectedColor = 'blue';
+    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
     console.log(module.selectedColor);
   }));
   blackColorBox.addEventListener('click', (function(){
+    document.getElementById('redSlider').value = 0;
+    document.getElementById('greenSlider').value = 0;
+    document.getElementById('blueSlider').value = 0;
     module.selectedColor = 'black';
+    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
     console.log(module.selectedColor);
   }));
   whiteColorBox.addEventListener('click', (function(){
+    document.getElementById('redSlider').value = 255;
+    document.getElementById('greenSlider').value = 255;
+    document.getElementById('blueSlider').value = 255;
     module.selectedColor = 'white';
+    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
     console.log(module.selectedColor);
   }));
 
@@ -82,10 +99,12 @@ module.colorSliders = function(){
   let redSlider = document.createElement('input');
   let greenSlider = document.createElement('input');
   let blueSlider = document.createElement('input');
+  let currentColor = document.createElement('div');
 
   redSlider.id = 'redSlider';
   greenSlider.id = 'greenSlider';
   blueSlider.id = 'blueSlider';
+  currentColor.id = 'currentColor';
   redSlider.setAttribute('type', 'range');
   greenSlider.setAttribute('type', 'range');
   blueSlider.setAttribute('type', 'range');
@@ -95,24 +114,31 @@ module.colorSliders = function(){
   redSlider.setAttribute('max', 255);
   greenSlider.setAttribute('max', 255);
   blueSlider.setAttribute('max', 255);
+  currentColor.className = 'colorBox';
+  currentColor.style.backgroundColor = module.selectedColor;
 
 
   redSlider.addEventListener('change', (function(){
     module.r = redSlider.value;
     module.selectedColor = 'rgb(' + module.r + ', ' + module.g + ', ' + module.b +')';
+    currentColor.style.backgroundColor = module.selectedColor;
     console.log(module.selectedColor);
   }));
   greenSlider.addEventListener('change', (function(){
     module.g = greenSlider.value;
     module.selectedColor = 'rgb(' + module.r + ', ' + module.g + ', ' + module.b +')';
+    currentColor.style.backgroundColor = module.selectedColor;
   }));
   blueSlider.addEventListener('change', (function(){
     module.b = blueSlider.value;
     module.selectedColor = 'rgb(' + module.r + ', ' + module.g + ', ' + module.b +')';
+    currentColor.style.backgroundColor = module.selectedColor;
   }));
+
   colorDiv.appendChild(redSlider);
   colorDiv.appendChild(greenSlider);
   colorDiv.appendChild(blueSlider);
+  colorDiv.appendChild(currentColor);
 };
 
 return module;
