@@ -5,6 +5,8 @@ function displayBox(){
   let module = {};
   let displayDiv = document.getElementById('pixelPainter');
   let colorDiv = document.getElementById('colors');
+  let sliderDiv = document.getElementById('sliders');
+  let currentSelectedColorDiv = document.getElementById('currentSelectedColor');
   module.clicked = false;
   module.r = 0;
   module.g = 0;
@@ -187,13 +189,12 @@ function displayBox(){
             }));
           break;
       }
-      colorDiv.appendChild(slide);
+      sliderDiv.appendChild(slide);
     }
     currentColor.id = 'currentColor';
     currentColor.className = 'colorBox';
     currentColor.style.backgroundColor = module.selectedColor;
-
-    colorDiv.appendChild(currentColor);
+    currentSelectedColorDiv.appendChild(currentColor);
   };
 
   module.clearGrid = function(){

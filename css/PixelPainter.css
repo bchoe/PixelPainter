@@ -20,16 +20,33 @@
 }
 
 #pixelPainter{
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 75%;
+  display: block;
 
 }
 
 #colors{
-  margin: auto;
-  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  display: block;
 }
 
+#sliders{
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  display: block;
+}
+
+#currentSelectedColor{
+    margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  display: block;
+}
 
 input[type=range]::-webkit-slider-thumb {
   background-color: red;
