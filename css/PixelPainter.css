@@ -27,3 +27,7 @@
   width: 60%;
 }
 
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: red;
+}
