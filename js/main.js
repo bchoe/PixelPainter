@@ -35,11 +35,11 @@ module.createColorBox = function(){
   let blueColorBox = document.createElement('div');
   let blackColorBox = document.createElement('div');
   let whiteColorBox = document.createElement('div');
-  redColorBox.className = 'colorBox';
-  greenColorBox.className = 'colorBox';
-  blueColorBox.className = 'colorBox';
-  blackColorBox.className = 'colorBox';
-  whiteColorBox.className = 'colorBox';
+  redColorBox.classList.add('colorBox');
+  greenColorBox.classList.add('colorBox');
+  blueColorBox.classList.add('colorBox');
+  blackColorBox.classList.add('colorBox');
+  whiteColorBox.classList.add('colorBox');
 
   redColorBox.style.backgroundColor = 'red';
   greenColorBox.style.backgroundColor = 'green';
@@ -114,6 +114,9 @@ module.colorSliders = function(){
   redSlider.setAttribute('max', 255);
   greenSlider.setAttribute('max', 255);
   blueSlider.setAttribute('max', 255);
+  redSlider.value = 0;
+  blueSlider.value = 0;
+  greenSlider.value = 0;
   currentColor.className = 'colorBox';
   currentColor.style.backgroundColor = module.selectedColor;
 
@@ -141,6 +144,18 @@ module.colorSliders = function(){
   colorDiv.appendChild(currentColor);
 };
 
+module.clearGrid = function(){
+  let clearButton = document.createElement('input');
+  let selectedButtons = document.querySelectorAll('#pixelPainter .column .button');
+
+  clearButton.setAttribute('type', 'button');
+  clearButton.value = 'clear';
+  clearButton.addEventListener('click', function(){
+    console.log(selectedButtons);
+  });
+  colorDiv.appendChild(clearButton);
+};
+
 return module;
 
 }
@@ -148,4 +163,5 @@ return module;
 let display = new displayBox();
 display.createColorBox();
 display.colorSliders();
+display.clearGrid();
 display.createGrid();
