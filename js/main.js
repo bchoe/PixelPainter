@@ -146,12 +146,15 @@ module.colorSliders = function(){
 
 module.clearGrid = function(){
   let clearButton = document.createElement('input');
-  let selectedButtons = document.querySelectorAll('#pixelPainter .column .button');
+  let selectedButtons = document.body.querySelectorAll('.button');
 
   clearButton.setAttribute('type', 'button');
   clearButton.value = 'clear';
   clearButton.addEventListener('click', function(){
-    console.log(selectedButtons);
+    for(let i = 0; i < selectedButtons.length; i++){
+
+      selectedButtons[i].style.backgroundColor = 'white';
+    }
   });
   colorDiv.appendChild(clearButton);
 };
@@ -163,5 +166,5 @@ return module;
 let display = new displayBox();
 display.createColorBox();
 display.colorSliders();
-display.clearGrid();
 display.createGrid();
+display.clearGrid();
