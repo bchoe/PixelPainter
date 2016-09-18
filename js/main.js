@@ -166,6 +166,7 @@ module.clearGrid = function(){
 
       selectedButtons[i].style.backgroundColor = 'white';
     }
+    module.clicked  = false;
   });
   colorDiv.appendChild(clearButton);
 };
