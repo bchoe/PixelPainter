@@ -1,5 +1,6 @@
 .column{
   display:inline-block;
+
 }
 
 .button{
@@ -15,11 +16,13 @@
   width: 50px;
   border: solid;
   display: inline-block;
+  border-radius: 75px;
 }
 
 #pixelPainter{
   margin: auto;
   width: 75%;
+
 }
 
 #colors{
