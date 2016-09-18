@@ -5,6 +5,7 @@ let width = 80;
 let module = {};
 let displayDiv = document.getElementById('pixelPainter');
 let colorDiv = document.getElementById('colors');
+module.clicked = false;
 module.r = 0;
 module.g = 0;
 module.b = 0;
@@ -21,7 +22,17 @@ module.createGrid = function(){
       gridBox.id = 'column'+ x + 'row' +y;
       gridBox.addEventListener('click', (function(){
         gridBox.style.backgroundColor = module.selectedColor;
+        if(module.clicked === false){
+          module.clicked = true;
+        } else {
+          module.clicked = false;
+        }
       }));
+      gridBox.addEventListener('mouseover', function(){
+        if(module.clicked === true){
+          gridBox.style.backgroundColor = module.selectedColor;
+        }
+      });
       createdRow.appendChild(gridBox);
       createdRow.className = 'column';
     }
