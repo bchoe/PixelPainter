@@ -41,253 +41,117 @@ function displayBox(){
   };
 
   module.createColorBox = function(){
-    let colorArr = ['red', 'green', 'blue', 'black', 'white', 'orange', 'purple', 'yellow', 'brown', 'pink'];
+    let colorArr = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'black', 'white', 'brown', 'pink'];
     for (var i = 0; i < 10 ;i++){
       let showColorBox = document.createElement('div');
       showColorBox.classList.add('colorBox');
       showColorBox.style.backgroundColor = colorArr[i];
-      showColorBox.addEventListener('click', (function(){
-        switch(this.style.backgroundColor){
-            case 'red':
-                showColorBox.addEventListener('click', (function(){
-                document.getElementById('redSlider').value = 255;
-                document.getElementById('greenSlider').value = 0;
-                document.getElementById('blueSlider').value = 0;
-                module.selectedColor = 'red';
-                document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-                console.log(module.selectedColor);
-                }));
+      switch(colorArr[i]){
+          case 'red':
+              showColorBox.addEventListener('click', (function(){
+              document.getElementById('redSlider').value = 255;
+              document.getElementById('greenSlider').value = 0;
+              document.getElementById('blueSlider').value = 0;
+              module.selectedColor = 'red';
+              document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
+              console.log(module.selectedColor);
+              }));
 
-                break;
-            case 'green':
-                showColorBox.addEventListener('click', (function(){
-                document.getElementById('redSlider').value = 0;
-                document.getElementById('greenSlider').value = 255;
-                document.getElementById('blueSlider').value = 0;
-                module.selectedColor = 'green';
-                document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-                console.log(module.selectedColor);
-                }));
-                break;
-            case 'blue':
-                showColorBox.addEventListener('click', (function(){
-                document.getElementById('redSlider').value = 0;
-                document.getElementById('greenSlider').value = 0;
-                document.getElementById('blueSlider').value = 255;
-                module.selectedColor = 'blue';
-                document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-                console.log(module.selectedColor);
-                }));
-                break;
-            case 'black':
-                showColorBox.addEventListener('click', (function(){
-                document.getElementById('redSlider').value = 0;
-                document.getElementById('greenSlider').value = 0;
-                document.getElementById('blueSlider').value = 0;
-                module.selectedColor = 'black';
-                document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-                console.log(module.selectedColor);
-                }));
-                break;
-            case 'white':
-                showColorBox.addEventListener('click', (function(){
-                document.getElementById('redSlider').value = 255;
-                document.getElementById('greenSlider').value = 255;
-                document.getElementById('blueSlider').value = 255;
-                module.selectedColor = 'white';
-                document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-                console.log(module.selectedColor);
-                }));
-                break;
-            case 'orange':
-                showColorBox.addEventListener('click', (function(){
-                document.getElementById('redSlider').value = 255;
-                document.getElementById('greenSlider').value = 165;
-                document.getElementById('blueSlider').value = 0;
-                module.selectedColor = 'orange';
-                document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-                console.log(module.selectedColor);
-                }));
-                break;
-            case 'purple':
-                showColorBox.addEventListener('click', (function(){
-                document.getElementById('redSlider').value = 128;
-                document.getElementById('greenSlider').value = 0;
-                document.getElementById('blueSlider').value = 128;
-                module.selectedColor = 'purple';
-                document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-                console.log(module.selectedColor);
-                }));
-                break;
-            case 'yellow':
-                showColorBox.addEventListener('click', (function(){
-                document.getElementById('redSlider').value = 255;
-                document.getElementById('greenSlider').value = 255;
-                document.getElementById('blueSlider').value = 0;
-                module.selectedColor = 'yellow';
-                document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-                console.log(module.selectedColor);
-                }));
-                break;
-            case 'brown':
-                showColorBox.addEventListener('click', (function(){
-                document.getElementById('redSlider').value = 165;
-                document.getElementById('greenSlider').value = 42;
-                document.getElementById('blueSlider').value = 42;
-                module.selectedColor = 'brown';
-                document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-                console.log(module.selectedColor);
-                }));
-                break;
-            case 'pink':
-                showColorBox.addEventListener('click', (function(){
-                document.getElementById('redSlider').value = 255;
-                document.getElementById('greenSlider').value = 192;
-                document.getElementById('blueSlider').value = 203;
-                module.selectedColor = 'pink';
-                document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-                console.log(module.selectedColor);
-                }));
-                break;
-          }
-        }));
+              break;
+          case 'green':
+              showColorBox.addEventListener('click', (function(){
+              document.getElementById('redSlider').value = 0;
+              document.getElementById('greenSlider').value = 255;
+              document.getElementById('blueSlider').value = 0;
+              module.selectedColor = 'green';
+              document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
+              console.log(module.selectedColor);
+              }));
+              break;
+          case 'blue':
+              showColorBox.addEventListener('click', (function(){
+              document.getElementById('redSlider').value = 0;
+              document.getElementById('greenSlider').value = 0;
+              document.getElementById('blueSlider').value = 255;
+              module.selectedColor = 'blue';
+              document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
+              console.log(module.selectedColor);
+              }));
+              break;
+          case 'black':
+              showColorBox.addEventListener('click', (function(){
+              document.getElementById('redSlider').value = 0;
+              document.getElementById('greenSlider').value = 0;
+              document.getElementById('blueSlider').value = 0;
+              module.selectedColor = 'black';
+              document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
+              console.log(module.selectedColor);
+              }));
+              break;
+          case 'white':
+              showColorBox.addEventListener('click', (function(){
+              document.getElementById('redSlider').value = 255;
+              document.getElementById('greenSlider').value = 255;
+              document.getElementById('blueSlider').value = 255;
+              module.selectedColor = 'white';
+              document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
+              console.log(module.selectedColor);
+              }));
+              break;
+          case 'orange':
+              showColorBox.addEventListener('click', (function(){
+              document.getElementById('redSlider').value = 255;
+              document.getElementById('greenSlider').value = 165;
+              document.getElementById('blueSlider').value = 0;
+              module.selectedColor = 'orange';
+              document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
+              console.log(module.selectedColor);
+              }));
+              break;
+          case 'purple':
+              showColorBox.addEventListener('click', (function(){
+              document.getElementById('redSlider').value = 128;
+              document.getElementById('greenSlider').value = 0;
+              document.getElementById('blueSlider').value = 128;
+              module.selectedColor = 'purple';
+              document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
+              console.log(module.selectedColor);
+              }));
+              break;
+          case 'yellow':
+              showColorBox.addEventListener('click', (function(){
+              document.getElementById('redSlider').value = 255;
+              document.getElementById('greenSlider').value = 255;
+              document.getElementById('blueSlider').value = 0;
+              module.selectedColor = 'yellow';
+              document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
+              console.log(module.selectedColor);
+              }));
+              break;
+          case 'brown':
+              showColorBox.addEventListener('click', (function(){
+              document.getElementById('redSlider').value = 165;
+              document.getElementById('greenSlider').value = 42;
+              document.getElementById('blueSlider').value = 42;
+              module.selectedColor = 'brown';
+              document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
+              console.log(module.selectedColor);
+              }));
+              break;
+          case 'pink':
+              showColorBox.addEventListener('click', (function(){
+              document.getElementById('redSlider').value = 255;
+              document.getElementById('greenSlider').value = 192;
+              document.getElementById('blueSlider').value = 203;
+              module.selectedColor = 'pink';
+              document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
+              console.log(module.selectedColor);
+              }));
+              break;
+        }
+
       colorDiv.appendChild(showColorBox);
     }
-   /* let redColorBox = document.createElement('div');
-    let greenColorBox = document.createElement('div');
-    let blueColorBox = document.createElement('div');
-    let blackColorBox = document.createElement('div');
-    let whiteColorBox = document.createElement('div');
-    let orangeColorBox = document.createElement('div');
-    let purpleColorBox = document.createElement('div');
-    let yellowColorBox = document.createElement('div');
-    let brownColorBox = document.createElement('div');
-    let pinkColorBox = document.createElement('div');
-
-    redColorBox.classList.add('colorBox');
-    greenColorBox.classList.add('colorBox');
-    blueColorBox.classList.add('colorBox');
-    blackColorBox.classList.add('colorBox');
-    whiteColorBox.classList.add('colorBox');
-    orangeColorBox.classList.add('colorBox');
-    purpleColorBox.classList.add('colorBox');
-    yellowColorBox.classList.add('colorBox');
-    brownColorBox.classList.add('colorBox');
-    pinkColorBox.classList.add('colorBox');
-
-    redColorBox.style.backgroundColor = 'red';
-    greenColorBox.style.backgroundColor = 'green';
-    blueColorBox.style.backgroundColor = 'blue';
-    blackColorBox.style.backgroundColor = 'black';
-    whiteColorBox.style.backgroundColor = 'white';
-    orangeColorBox.style.backgroundColor = 'orange';
-    purpleColorBox.style.backgroundColor = 'purple';
-    yellowColorBox.style.backgroundColor = 'yellow';
-    brownColorBox.style.backgroundColor = 'brown';
-    pinkColorBox.style.backgroundColor = 'pink';*/
-
-    /*redColorBox.addEventListener('click', (function(){
-    document.getElementById('redSlider').value = 255;
-    document.getElementById('greenSlider').value = 0;
-    document.getElementById('blueSlider').value = 0;
-    module.selectedColor = 'red';
-    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-    console.log(module.selectedColor);
-    }));
-
-    greenColorBox.addEventListener('click', (function(){
-    document.getElementById('redSlider').value = 0;
-    document.getElementById('greenSlider').value = 255;
-    document.getElementById('blueSlider').value = 0;
-    module.selectedColor = 'green';
-    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-    console.log(module.selectedColor);
-    }));
-
-    blueColorBox.addEventListener('click', (function(){
-    document.getElementById('redSlider').value = 0;
-    document.getElementById('greenSlider').value = 0;
-    document.getElementById('blueSlider').value = 255;
-    module.selectedColor = 'blue';
-    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-    console.log(module.selectedColor);
-    }));
-
-    blackColorBox.addEventListener('click', (function(){
-    document.getElementById('redSlider').value = 0;
-    document.getElementById('greenSlider').value = 0;
-    document.getElementById('blueSlider').value = 0;
-    module.selectedColor = 'black';
-    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-    console.log(module.selectedColor);
-    }));
-
-    whiteColorBox.addEventListener('click', (function(){
-    document.getElementById('redSlider').value = 255;
-    document.getElementById('greenSlider').value = 255;
-    document.getElementById('blueSlider').value = 255;
-    module.selectedColor = 'white';
-    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-    console.log(module.selectedColor);
-    }));
-
-    orangeColorBox.addEventListener('click', (function(){
-    document.getElementById('redSlider').value = 255;
-    document.getElementById('greenSlider').value = 165;
-    document.getElementById('blueSlider').value = 0;
-    module.selectedColor = 'orange';
-    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-    console.log(module.selectedColor);
-    }));
-
-    purpleColorBox.addEventListener('click', (function(){
-    document.getElementById('redSlider').value = 128;
-    document.getElementById('greenSlider').value = 0;
-    document.getElementById('blueSlider').value = 128;
-    module.selectedColor = 'purple';
-    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-    console.log(module.selectedColor);
-    }));
-
-    yellowColorBox.addEventListener('click', (function(){
-    document.getElementById('redSlider').value = 255;
-    document.getElementById('greenSlider').value = 255;
-    document.getElementById('blueSlider').value = 0;
-    module.selectedColor = 'yellow';
-    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-    console.log(module.selectedColor);
-    }));
-
-
-    brownColorBox.addEventListener('click', (function(){
-    document.getElementById('redSlider').value = 165;
-    document.getElementById('greenSlider').value = 42;
-    document.getElementById('blueSlider').value = 42;
-    module.selectedColor = 'brown';
-    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-    console.log(module.selectedColor);
-    }));
-
-    pinkColorBox.addEventListener('click', (function(){
-    document.getElementById('redSlider').value = 255;
-    document.getElementById('greenSlider').value = 192;
-    document.getElementById('blueSlider').value = 203;
-    module.selectedColor = 'pink';
-    document.getElementById('currentColor').style.backgroundColor = module.selectedColor;
-    console.log(module.selectedColor);
-    }));*/
-
-    /*colorDiv.appendChild(redColorBox);
-    colorDiv.appendChild(greenColorBox);
-    colorDiv.appendChild(blueColorBox);
-    colorDiv.appendChild(blackColorBox);
-    colorDiv.appendChild(whiteColorBox);
-    colorDiv.appendChild(orangeColorBox);
-    colorDiv.appendChild(purpleColorBox);
-    colorDiv.appendChild(yellowColorBox);
-    colorDiv.appendChild(brownColorBox);
-    colorDiv.appendChild(pinkColorBox);*/
-
   };
 
   module.colorSliders = function(){
