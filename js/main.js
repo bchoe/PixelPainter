@@ -1,7 +1,7 @@
 function displayBox(){
 
-  let height = 60;
-  let width = 80;
+  let height = 20;
+  let width = 50;
   let module = {};
   let displayDiv = document.getElementById('pixelPainter');
   let colorDiv = document.getElementById('colors');
@@ -200,16 +200,16 @@ function displayBox(){
   module.clearGrid = function(){
     let clearButton = document.createElement('input');
     let selectedButtons = document.body.querySelectorAll('.button');
-
     clearButton.setAttribute('type', 'button');
     clearButton.value = 'clear';
     clearButton.addEventListener('click', function(){
     for(let i = 0; i < selectedButtons.length; i++){
-
     selectedButtons[i].style.backgroundColor = 'white';
-    }cked  = false;
+    }
+    module.clicked  = false;
     });
-    colorDiv.appendChild(clearButton);
+    document.getElementById('clear').appendChild(clearButton);
+
   };
 
 return module;

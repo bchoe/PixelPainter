@@ -20,34 +20,48 @@
 }
 
 #pixelPainter{
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
   display: block;
-
+  margin: 0 auto;
+  margin-top: 25px;
+  width: 600px;
 }
 
 #colors{
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin: 0 auto;
   display: block;
+  width: 300px;
 }
 
 #sliders{
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+  margin: 0 auto;
   display: block;
+  width: 400px;
+  margin-top: 35px;
+}
+
+#clear{
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 55px;
 }
 
 #currentSelectedColor{
-    margin-left: auto;
-  margin-right: auto;
-  width: 15%;
+  margin: 0 auto;
+  width: 75px;
   display: block;
+  margin-top: 15px;
+}
+
+#container{
+  margin: 0 auto;
+  width: 600px;
+
 }
 
 input[type=range]::-webkit-slider-thumb {
   background-color: red;
+}
+
+h1 {
+  text-align: center;
 }
