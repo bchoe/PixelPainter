@@ -22,3 +22,4 @@ Do not edit the `index.html` file. You will generate all of your html markup usi
 
 ## Stretch Goals
 
+Make it pretty
